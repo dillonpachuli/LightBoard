@@ -5,8 +5,8 @@ public class LightBoard{
         lights = new boolean[numRows][numCols];
         for (int i = 0; i < numRows; i++){
             for (int j = 0; j < numCols; j++){
-                if (Math.random() < .4) lights[i][j] = true;
-                lights[i][j] = false;
+                if (Math.random() < 0.4) lights[i][j] = true;
+                else lights[i][j] = false;
             }
         }
     }
@@ -38,10 +38,10 @@ public class LightBoard{
     public String toString(){
         String s = "";
         for (int i = 0; i < lights.length; i++){
-            if (i == 0) s += "[";
+            s += "[";
             for (int j = 0; j < lights[i].length; j++){
-                if (j == lights[i].length-1) s += lights[i][j] + "]";
-                s += lights[i][j] + ", ";
+                if (j == lights[i].length-1) s += lights[i][j] + "] \n";
+                else s += lights[i][j] + ", ";
             }
         }
         return s;
